@@ -22,6 +22,8 @@ A test.mp4 file is included, so you can type *!meme test* into chat to test befo
 
 ### Configurable Options
 
+These are all accessable via buttons in OBS interactive mode.
+
 - Timeout period for mods being considered 'away' - defaults to 30 minutes
 - Meme trigger command text - doesn't have to be !meme, can be whatever you like after the !
 - Ignore List - specify comma seperated list of users to ignore, like bots who are commonly mods but not considered worthy of a greeting. :)
