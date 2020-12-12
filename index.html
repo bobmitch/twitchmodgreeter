@@ -65,8 +65,9 @@
     </div>
 
     <div id='buttons'>
-        <button id='mp3' onclick='beep.play();'>Test Beep</button>
-        <button id='volume' onclick='setvolume();'>Volume</button>
+        <!-- <button id='mp3' onclick='beep.play();'>Test Beep</button>
+        <button id='volume' onclick='setvolume();'>Volume</button> -->
+        <button id='timeout' onclick='settrigger();'>Meme Trigger</button>
         <button id='timeout' onclick='settimeout();'>Trigger Timeout</button>
         <button id='changechannel' onclick='resetchannel();'>Join New Channel</button>
         <button id='ignore' onclick='setignore();'>Ignore List</button>
@@ -94,6 +95,11 @@
         var actual_src = localStorage.getItem('chatbeepmp3');
         if (actual_src) {
             beep.src = actual_src;
+        }
+
+        var meme_trigger = localStorage.getItem('memetrigger');
+        if (!meme_trigger) {
+            meme_trigger = 'meme';
         }
 
         var ignore_list_string = localStorage.getItem('chatignore');
@@ -173,7 +179,7 @@
         }
 
         ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
-            if( (flags.mod||flags.broadcaster||flags.subscriber) && command === "meme" ) {
+            if( (flags.mod||flags.broadcaster||flags.subscriber) && command === meme_trigger ) {
                 /* console.log("MEME!");
                 console.log( user, " : ", message );
                 console.log('flags:',flags);
@@ -218,6 +224,14 @@
                     timeout = timeoutint * 1000;
                     localStorage.setItem('chatbeeptime',timeout);
                 }
+            }
+        }
+
+        function settrigger() {
+            var new_trigger = window.prompt('Enter the text to trigger a meme video:', meme_trigger);
+            if (new_trigger) {
+                meme_trigger = new_trigger;
+                localStorage.setItem('memetrigger',meme_trigger);
             }
         }
 
