@@ -1,7 +1,7 @@
 # Twitch Modgreeter
 ## (and meme trigger!)
 
-OBS Browser source file that plays videos when mods chat for the first time in a while, or videos triggered by any trusted viewer via a !command test.
+OBS Browser source file that plays videos when mods chat for the first time in a while, or videos triggered by any trusted viewer via a twitch !command message (default is !meme).
 
 ### Instructions
 
