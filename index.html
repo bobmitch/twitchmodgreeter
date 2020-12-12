@@ -112,7 +112,7 @@
 
         var timeout = parseInt(localStorage.getItem('chatbeeptime'));
         if (!timeout) {
-            timeout = 120000;
+            timeout = 1800000; // 30 minutes
         }
 
         function get_nice_timestamp (date, locale) {
