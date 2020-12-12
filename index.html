@@ -145,10 +145,10 @@
         }
 
         ComfyJS.onChat = ( user, message, flags, self, extra ) => {
-            /* console.log( user, " : ", message );
+            console.log( user, " : ", message );
             console.log('flags:',flags);
             console.log('self:',self);
-            console.log('extra:',extra);  */
+            console.log('extra:',extra); 
 
             if (ignore_list.includes(user)) {
                 // skip beep and timestamp update, on ignore list
