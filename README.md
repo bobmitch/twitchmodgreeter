@@ -1,7 +1,7 @@
 # Twitch Modgreeter
 ## (and meme trigger!)
 
-OBS Browser source file that plays videos when mods chat for the first time in a while  
+OBS Browser source file that plays videos when mods chat for the first time in a while, or videos triggered by any trusted viewer via a twitch !command message (default is !meme).
 
 ### Instructions
 
@@ -15,6 +15,8 @@ i.e.
 
 If your mod is called **bobmitch**, your mp4 file should be called **bobmitch.mp4**  
 If your !meme trigger is !meme test, your mp4 file should be called **test.mp4**  
+
+The **!meme** trigger can be changed to any command you like by clicking the **Meme Trigger** button when interacting with the browser source.
 
 A test.mp4 file is included, so you can type *!meme test* into chat to test before adding your own.
 
