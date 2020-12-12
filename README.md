@@ -1,14 +1,20 @@
-# twitchmodgreeter
-OBS Browser source file that plays videos when mods chat for the first time in a while
+# Twitch Modgreeter
+## (and meme trigger!)
 
-Download, unzip, add index.html file as browser source (local file) in OBS.
+OBS Browser source file that plays videos when mods chat for the first time in a while  
 
-Any mp4 file in same folder as index.html file with a name matching a twitch chat mod will be triggered/played if it has been a certain time since their last chat interaction. (Default 2 minutes).
+### Instructions
 
-!meme memename function in twitch chat will trigger a video in the same location with a filename matching the memename.
+1. Download, unzip. 
+2. Add *index.html* file as browser source (local file) in OBS.
+3. Place your mp4 files into same folder as index.html file.
 
-e.g. 
+The name of your mp4 file must match the name of either a mod or a meme trigger.
 
-!meme test
+i.e. 
 
-Will play the video file called 'test.mp4' in the same folder as the index.html file.
+If your mod is called bobmitch, your mp4 file should be called bobmitch.mp4  
+If your !meme trigger is !meme test, your mp4 file should be called test.mp4  
+
+A test.mp4 file is included, so you can type *!meme test* into chat to test before adding your own.
+
