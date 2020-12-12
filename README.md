@@ -20,3 +20,10 @@ The **!meme** trigger can be changed to any command you like by clicking the **M
 
 A test.mp4 file is included, so you can type *!meme test* into chat to test before adding your own.
 
+### Configurable Options
+
+- Timeout period for mods being considered 'away' - defaults to 30 minutes
+- Meme trigger command text - doesn't have to be !meme, can be whatever you like after the !
+- Ignore List - specify comma seperated list of users to ignore, like bots who are commonly mods but not considered worthy of a greeting. :)
+- Channel Switch - quickly connect to another channel
+
