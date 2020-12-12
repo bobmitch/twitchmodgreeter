@@ -130,18 +130,23 @@
             video_el.appendChild(src_el);
             wrap_el.appendChild(video_el);
             video_el.addEventListener('ended',function(e){
-                //console.log(e);
                 var remove_me = e.target.closest('.video_wrapper');
                 remove_me.parentNode.removeChild(remove_me);
             },false);
+            src_el.addEventListener('error',function(e){
+                console.log('Error playing video - probably does not exist')
+                // remove video regardless
+                var remove_me = e.target.closest('.video_wrapper');
+                remove_me.parentNode.removeChild(remove_me);
+            });
             document.getElementById('stage').appendChild(wrap_el);
         }
 
         ComfyJS.onChat = ( user, message, flags, self, extra ) => {
-            console.log( user, " : ", message );
+            /* console.log( user, " : ", message );
             console.log('flags:',flags);
             console.log('self:',self);
-            console.log('extra:',extra); 
+            console.log('extra:',extra);  */
 
             if (ignore_list.includes(user)) {
                 // skip beep and timestamp update, on ignore list
@@ -162,6 +167,18 @@
                     }
                 }
                 users[user].last_message = extra.timestamp;
+            }
+        }
+
+        ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
+            if( (flags.mod||flags.broadcaster||flags.subscriber) && command === "meme" ) {
+                /* console.log("MEME!");
+                console.log( user, " : ", message );
+                console.log('flags:',flags);
+                console.log('self:',self);
+                console.log('extra:',extra); */
+                // message has !COMMAND stripped
+                show_video(message);
             }
         }
 
