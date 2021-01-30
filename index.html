@@ -168,7 +168,7 @@
                     users[user].last_message = -99999999999999;
                 }
                 if ( (extra.timestamp - users[user].last_message) > timeout) {
-                    if (flags.broadcaster||flags.mod) {
+                    if (flags.broadcaster||flags.mod||flags.vip||flags.subscriber) {
                         console.log('new message from mod/broadcaster');
                         //beep.play();
                         show_video(user);
